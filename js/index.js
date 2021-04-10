@@ -1,24 +1,32 @@
-//#region Types
-/** @typedef { (err: null | number, res: JSON | any) => void } fn */
-//#endregion
+const HOST_URL = "https://api.github.com/users"
+const REPOS = "repos"
+const USERS = [
+  "nonametitan",
+  "noname-titan"
+]
 
 /**
- * @param { string } url
- * @param { fn } fn
+ * @param { any[] } arr
+ * @param { (item: any, index: number) => (void | true) } fn
  */
-const getData = (url, fn) => {
-  let p = url
-  if (p[0] !== "/") p = "/" + p
-  getJSON(window.location.origin + p, fn)
-},
-  getJSON = (url, fn) => {
-    let x = new XMLHttpRequest()
-    x.open('GET', url, true)
-    x.responseType = 'json'
-    x.onload = () => fn(x.status === 200 ? null : x.status, x.response)
-    x.send()
-  }
+function forEach(arr, fn) { for (let i = 0; i < arr.length; i++) if (fn(arr[i], i) == true) return }
 
-getJSON("https://api.github.com/users/noname-titan/repos", (err, data) => {
-  console.log(data)
-})
+/**
+ * @param  {...string } str
+ */
+function path(...str) {
+  let z = "", y = "/"
+  forEach(str, (x, i) => {
+    if ("string" !== typeof x) throw new TypeError("Bad argument")
+    x = x.trim()
+    if (i > 0 && x.slice(0, 3) == "../") { z = z.slice(0, z.lastIndexOf("/")); x = s.slice(2) }
+    if (i > 0 && x[0] !== y) x = y + x
+    if (i < str.length && x.endsWith(y)) x = x.slice(0, x.length - 1)
+    z += x
+  })
+  return z
+}
+
+forEach(USERS, user => fetch(path(HOST_URL, user, REPOS)).then(x => x.json()).then(x => {
+  forEach(x, console.log)
+}))
