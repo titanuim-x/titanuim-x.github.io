@@ -4,6 +4,8 @@ const USERS = [
   "nonametitan",
   "noname-titan"
 ]
+const $$ = document
+const BODY = $$.getElementById("body")
 
 /**
  * @param { any[] } arr
@@ -26,7 +28,21 @@ function path(...str) {
   })
   return z
 }
-
-forEach(USERS, user => fetch(path(HOST_URL, user, REPOS)).then(x => x.json()).then(x => {
-  forEach(x, console.log)
-}))
+/**
+ * @param { string } css
+ * @param { HTMLElement | HTMLDivElement } child
+ * @param { string | "div" } tag
+ */
+function Div(css, child, tag) {
+  let x = $$.createElement(tag ? tag : "div")
+  if (css) x.classList.add(css)
+  if ("string" == typeof child) x.innerHTML = child
+  else if (child instanceof HTMLElement) x.appendChild(child)
+  return x
+}
+forEach(USERS, user => fetch(path(HOST_URL, user, REPOS))
+  .then(x => x.json()).then(x => forEach(x, y => {
+    if (y.has_pages) BODY.appendChild(
+      Div("card", `<h1>${y.name}</h1><h2>${y.owner.login}</h2><a href="${x.url}">Open</a>`)
+    )
+  })))
