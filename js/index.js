@@ -35,16 +35,12 @@ function path(...str) {
  */
 function Div(css, child, tag) {
   let x = $$.createElement(tag ? tag : "div")
-  if (Array.isArray(css)) x.classList.add(...css)  
+  if (Array.isArray(css)) x.classList.add(...css)
   if ("string" == typeof child) x.innerHTML = child
   else if (child instanceof HTMLElement) x.appendChild(child)
   return x
 }
 forEach(USERS, user => fetch(path(HOST_URL, user, REPOS))
-  .then(x => x.json()).then(x => forEach(x, y => {
-    let card = y.has_pages ? ["card","gold"] : ["card"]
-    console.log(card)
-    BODY.appendChild(
-      Div(card, `<h1>${y.name}</h1><h2>${y.owner.login}</h2><a href="${x.url}">Open</a>`)
-    )
-  })))
+  .then(x => x.json()).then(x => forEach(x, y => BODY.appendChild(
+    Div(y.has_pages ? ["card", "gold"] : ["card"], `<h1>${y.name}</h1><h2>${y.owner.login}</h2><a href="${y.html_url}">Open</a>`)
+  ))))
