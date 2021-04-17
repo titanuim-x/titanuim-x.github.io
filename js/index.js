@@ -4,14 +4,7 @@ const USERS = [
   "nonametitan",
   "noname-titan"
 ]
-const $$ = document
-const BODY = $$.getElementById("body")
-
-/**
- * @param { any[] } arr
- * @param { (item: any, index: number) => (void | true) } fn
- */
-function forEach(arr, fn) { for (let i = 0; i < arr.length; i++) if (fn(arr[i], i) == true) return }
+const BODY = $.id("body")
 
 /**
  * @param  {...string } str
