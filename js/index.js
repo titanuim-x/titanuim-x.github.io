@@ -1,7 +1,7 @@
 import { tools, DOM } from "../node_modules/nonametitan_toolkit/index.js"
 import { attr, Block } from "./design.js"
 
-const { each, is, path, request } = tools
+const { each, is, path, getJSON } = tools
 const { search, device, Div, styler, add, remove } = DOM
 
 const HOST_URL = "https://api.github.com/users",
@@ -10,7 +10,6 @@ const HOST_URL = "https://api.github.com/users",
     "nonametitan",
     "noname-titan"
   ],
-  $$ = document,
   BODY = search.id("body");
 
 /**
@@ -51,7 +50,7 @@ function CardRepo(user) {
 let content = search.id("content")
 content.appendChild(Block(Div(),{pos:{x:5,y:2},size:{x:1,y:2}}))
 
-each(USERS, user => request(path(HOST_URL, user, REPOS), (status, data) => {
+each(USERS, user => getJSON(path(HOST_URL, user, REPOS), (status, data) => {
   console.log(data)
 }))
 
