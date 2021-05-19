@@ -48,14 +48,14 @@ function CardRepo(user) {
 }
 
 let content = search.id("content")
-content.appendChild(Block(Div(),{pos:{x:5,y:2},size:{x:1,y:2}}))
 
 each(USERS, user => getJSON(path(HOST_URL, user, REPOS), (status, data) => {
-  console.log(data)
+  each(data,x=>{
+    content.appendChild(
+      Div_(x.has_pages ? ["card", "gold"] : ["card"],
+        `<h4>${x.name}</h4>
+        <h6>${x.owner.login}</h6>
+        <a href="${x.html_url}">Open</a>`))
+  })
+  
 }))
-
-each(USERS, user => fetch(path(HOST_URL, user, REPOS))
-  .then(x => x.json())
-  .then(x => each(x, y => BODY.appendChild(
-    Div_(y.has_pages ? ["card", "gold"] : ["card"], `<h1>${y.name}</h1><h2>${y.owner.login}</h2><a href="${y.html_url}">Open</a>`)
-  ))))
