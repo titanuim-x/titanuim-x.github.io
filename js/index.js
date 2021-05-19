@@ -1,4 +1,4 @@
-import { tools, DOM } from "../node_modules/nonametitan_toolkit/index.js"
+import { tools, DOM } from "https://noname-titan.github.io/Tools/index.js"
 import { attr, Block } from "./design.js"
 
 const { each, is, path, getJSON } = tools
