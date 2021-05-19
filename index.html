@@ -12,22 +12,62 @@
 
 <body>
   <header class="to_center">
-    <a href="http://noname-titan.github.io"></a>
+    <a class="logo notranslate" translate="no" href="http://noname-titan.github.io">ASET</a>
     <nav id="nav">
       <ul id="nav_list">
-        <li><a href="htpps://noname-titan.github.io">Home</a></li>
-        <li><a href="htpps://noname-titan.github.io">Gallery</a></li>
-        <li><a href="htpps://noname-titan.github.io" class="active">Repository</a></li>
+        <li><a href="htpps://noname-titan.github.io">Main</a></li>
+        <li><a href="htpps://noname-titan.github.io/gallery">Gallery</a></li>
       </ul>
     </nav>
   </header>
   <main id="body">
-    <section grid id="content" class="page">
-      <div block></div>
+    <style>
+      [gallery] .card {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--dark);
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        height: 160px;
+      }
+
+      [gallery] .card h4 {
+        padding: var(--size1);
+        padding-bottom: 0;
+        font-weight: 500;
+      }
+
+      [gallery] .card h6 {
+        padding: var(--size1);
+      }
+
+      [gallery] .card a {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: var(--size4);
+        text-align: center;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+
+      [gallery] .card a:after {
+        display: none !important;
+      }
+
+      [gallery] .card a:hover {
+        background: var(--accent);
+        color: var(--light);
+      }
+    </style>
+    <section gallery id="content" style="--gallery-min:350px;padding:var(--size4)">
+      <h3 class="flex to_center font_700">Repositories</h3>
     </section>
   </main>
 
-  <script src="./node_modules/nonametitan_toolkit/index.js" type="module" defer></script>
+  <script src="https://noname-titan.github.io/Tools/index.js" type="module" defer></script>
   <script src="./js/design.js" type="module" defer></script>
   <script src="./js/index.js" type="module" defer></script>
 </body>
