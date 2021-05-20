@@ -50,12 +50,12 @@ function CardRepo(user) {
 let content = search.id("content")
 
 each(USERS, user => getJSON(path(HOST_URL, user, REPOS), (status, data) => {
-  each(data,x=>{
+  each(data, x => {
     content.appendChild(
       Div_(x.has_pages ? ["card", "gold"] : ["card"],
         `<h4>${x.name}</h4>
         <h6>${x.owner.login}</h6>
-        <a href="${x.html_url}">Open</a>`))
+        <a href="${x.has_pages ? location.origin + "/" + x.name : x.html_url}">Open</a>`))
   })
-  
+
 }))
