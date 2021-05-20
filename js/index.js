@@ -1,4 +1,4 @@
-import { tools, DOM } from "https://titanuim-studio.github.io/Tools/index.js"
+import { tools, DOM } from "https://titanium-studio.github.io/Tools/index.js"
 import { attr, Block } from "./design.js"
 
 const { each, is, path, getJSON } = tools
@@ -7,8 +7,8 @@ const { search, device, Div, styler, add, remove } = DOM
 const HOST_URL = "https://api.github.com/users",
   REPOS = "repos",
   USERS = [
-    "titanuim-x",
-    "titanuim-studio"
+    "x-titan",
+    "titanium-studio"
   ],
   BODY = search.id("body");
 
