@@ -29,14 +29,13 @@ function Div_(css, child, tag) {
  * @param {number} user.id
  * @param {string} user.name
  * @param {string} user.full_name
- * @param {string} user.url
+ * @param {string} user.html_url
  * @param {string} user.language
  * @param {boolean} user.has_pages
  * @param {Object} user.owner
  * @param {string} user.owner.login
  * @param {string} user.owner.id
  * @param {string} user.owner.avatar_url
- * @param {string} user.owner.url
  * @param {string} user.owner.html_url
  * @param {string} user.owner.type
  */
@@ -55,7 +54,7 @@ each(USERS, user => getJSON(path(HOST_URL, user, REPOS), (status, data) => {
       Div_(x.has_pages ? ["card", "gold"] : ["card"],
         `<h4>${x.name}</h4>
         <h6>${x.owner.login}</h6>
-        <a href="${x.has_pages ? location.origin + "/" + x.name : x.html_url}">Open</a>`))
+        <a href="${x.has_pages && x.owner === "x-titan" ? location.origin + "/" + x.name : x.html_url}">Open</a>`))
   })
 
 }))
