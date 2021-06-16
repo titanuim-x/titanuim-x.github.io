@@ -1,0 +1,144 @@
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #4075e7;
+}
+
+#app {
+  background-color: var(--gray-900);
+  color: var(--light);
+}
+
+[xbuild] {
+  overflow: hidden;
+}
+
+#main [xtext] {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18vw;
+  line-height: 0.85em;
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+}
+
+#about {
+  height: auto;
+  padding: var(--size6, 128px) 0;
+}
+
+#about>[xbuild] {
+  width: 1024px;
+}
+
+#about [xlist="row"] {
+  flex-direction: row;
+  margin-top: calc(var(--size6, 128px) * 1.5);
+}
+
+#about .description {
+  font-size: 1.6em;
+}
+
+#about .leftSide {
+  font-size: 1.4em;
+}
+
+#about .rightSide {
+  flex-direction: column;
+}
+
+#about .rightSide [xbuild] {
+  margin-top: var(--size3, 32px);
+}
+
+#about [xlist="row"] [xbuild] {
+  flex: 1;
+}
+
+#footer {
+  height: 50%;
+  min-height: 400px;
+  font-weight: 500;
+}
+
+#footer .footer_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: '. . Email Email' 'Socials Githubs Sites .';
+  align-items: flex-end;
+  height: 100%;
+}
+
+#footer [xlist] {
+  padding: var(--size2, 24px) 0;
+}
+
+#footer [xtext]:first-child {
+  font-weight: 700;
+}
+
+#footer [xlist] a {
+  margin-top: var(--size1, 18px);
+}
+
+#footer .footer_email {
+  grid-area: Email;
+  font-size: var(--h2, 2.6em)
+}
+
+#footer .footer_social {
+  grid-area: Socials;
+  padding-left: var(--size2, 24px);
+}
+
+#footer .footer_github {
+  grid-area: Githubs;
+}
+
+#footer .footer_site {
+  grid-area: Sites;
+}
+
+@media screen and (min-width:750px) {
+  #about .rightSide [xbuild]:first-child {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width:750px) {
+  #main [xtext] {
+    transform-origin: left;
+    transform: rotateZ(90deg);
+    bottom: initial;
+    top: -10%;
+    left: 18vh;
+    font-size: 18vh;
+  }
+  #footer .footer_grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'Email Email' 'Socials Githubs';
+  }
+  #footer .footer_email {
+    justify-self: end;
+    font-size: var(--h4, 1.8em);
+  }
+  #footer .footer_site {
+    display: none;
+  }
+  #about .empty {
+    flex: 0!important;
+  }
+  #about [xlist=row] {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width:450px) {
+  #footer .footer_email {
+    font-size: var(--h5, 1.4em);
+  }
+}

@@ -5,71 +5,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://titanium-studio.github.io/studio/css/start.css">
-  <link rel="stylesheet" href="./css/index.css">
-  <title>Repository</title>
+  <link rel="shortcut icon" href="./src/img/hero2.png" type="image/png">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Barlow&family=Comfortaa&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="./core/css/index.css">
+  <title>X Titan</title>
 </head>
 
 <body>
-  <header class="to_center">
-    <a class="logo notranslate" translate="no" href="http://titanium-studio.github.io"><img src="http://titanium-studio.github.io/src/svg/hero1.svg"></a>
-    <nav id="nav">
-      <ul id="nav_list">
-        <li><a href="htpps://titanium-studio.github.io">Main</a></li>
-        <li><a href="htpps://titanium-studio.github.io/gallery">Gallery</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main id="body">
-    <style>
-      [gallery] .card {
-        display: flex;
-        flex-direction: column;
-        border: 1px solid var(--dark);
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-        height: 160px;
-      }
-
-      [gallery] .card h4 {
-        padding: var(--size1);
-        padding-bottom: 0;
-        font-weight: 500;
-      }
-
-      [gallery] .card h6 {
-        padding: var(--size1);
-      }
-
-      [gallery] .card a {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: var(--size4);
-        text-align: center;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-      }
-
-      [gallery] .card a:after {
-        display: none !important;
-      }
-
-      [gallery] .card a:hover {
-        background: var(--accent);
-        color: var(--light);
-      }
-    </style>
-    <section gallery id="content" style="--gallery-min:404px;padding:var(--size4)">
-      <h3 class="flex to_center font_700">Repositories</h3>
-    </section>
-  </main>
-
-  <script src="https://titanium-studio.github.io/Tools/index.js" type="module" defer></script>
-  <script src="./js/design.js" type="module" defer></script>
-  <script src="./js/index.js" type="module" defer></script>
+  <div id="app"></div>
+  <script src="https://x-titan.github.io/utils/index.js" type="module" defer></script>
+  <script src="https://x-titan.github.io/web-utils/index.js" type="module" defer></script>
+  <script src="https://x-titan.github.io/xstudio/index.js" type="module" defer></script>
+  <script src="./core/js/index.js" type="module" defer></script>
 </body>
 
 </html>
