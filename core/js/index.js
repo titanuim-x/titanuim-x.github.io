@@ -1,9 +1,4 @@
-import { tools, DOM } from "https://titanium-studio.github.io/Tools/index.js"
 import { XStudio, XBlank, XSection, XContent, XList, XText, XFooter } from "https://x-titan.github.io/xstudio/index.js"
-
-const { is, each, getJSON, path, getBase64Image, EXTEND } = tools,
-  { search, add, remove, styler } = DOM,
-  $$ = document;
 
 const xstudio = new XStudio("#app")
 
