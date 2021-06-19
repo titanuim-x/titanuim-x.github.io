@@ -7,9 +7,13 @@ xstudio.init()
     return [
       XSection({ id: "main" },
         XBlank(
+          XList({ listType: "row" },
+            XText({ tagName: "a", href: "#about" }, "about"),
+            XText({ tagName: "a", href: "#footer" }, "contact")
+          ),
           XText({
             tagName: "h1", notranslate: true
-          }, "Titanium\nStudio")
+          }, "X-Titan")
         )
       ),
       XSection({ id: "about", css: "wrapper" },
