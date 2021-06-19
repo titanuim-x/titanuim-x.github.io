@@ -8,8 +8,11 @@ xstudio.init()
       XSection({ id: "main" },
         XBlank(
           XList({ listType: "row" },
-            XText({ tagName: "a", href: "#about" }, "about"),
-            XText({ tagName: "a", href: "#footer" }, "contact")
+            XText({ tagName: "a", href: "" }, "Index"),
+            XList({ listType: "row" },
+              XText({ tagName: "a", href: "#about" }, "about"),
+              XText({ tagName: "a", href: "#footer" }, "contact")
+            )
           ),
           XText({
             tagName: "h1", notranslate: true
