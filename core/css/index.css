@@ -1,5 +1,6 @@
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 a:hover {
@@ -7,26 +8,34 @@ a:hover {
 }
 
 #app {
-  background-color: var(--gray-900);
-  color: var(--light);
+  background-color: var(--gray-900, #101010);
+  color: var(--light, #000);
 }
 
-[xbuild] {
-  overflow: hidden;
-}
-
-#main [xtext] {
+#main h1[xtext] {
   font-family: 'Montserrat', sans-serif;
-  font-size: 18vw;
+  font-size: 24vw;
   line-height: 0.85em;
   position: absolute;
   bottom: 0;
   left: 16px;
+  transform-origin: bottom;
+}
+
+#main [xlist] {
+  height: auto;
+  width: var(--fill, -webkit-fill-available);
+  justify-content: flex-end;
+  padding: 0 var(--size2, 24);
+}
+
+#main a {
+  margin: var(--size1, 16);
 }
 
 #about {
   height: auto;
-  padding: var(--size6, 128px) 0;
+  margin: var(--size6, 128px) 0;
 }
 
 #about>[xbuild] {
@@ -87,7 +96,7 @@ a:hover {
 
 #footer .footer_email {
   grid-area: Email;
-  font-size: var(--h2, 2.6em)
+  font-size: 3.45vw;
 }
 
 #footer .footer_social {
@@ -110,13 +119,14 @@ a:hover {
 }
 
 @media screen and (max-width:750px) {
-  #main [xtext] {
+  #main h1[xtext] {
     transform-origin: left;
     transform: rotateZ(90deg);
+    top: 19vh;
     bottom: initial;
-    top: -10%;
-    left: 18vh;
-    font-size: 18vh;
+    left: 10vh;
+    font-size: 20vh;
+    white-space: nowrap;
   }
   #footer .footer_grid {
     grid-template-columns: 1fr 1fr;
