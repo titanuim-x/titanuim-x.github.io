@@ -26,7 +26,6 @@ a:hover {
   height: auto;
   width: var(--fill, -webkit-fill-available);
   justify-content: flex-end;
-  padding: 0 var(--size2, 24);
 }
 
 #main a {
