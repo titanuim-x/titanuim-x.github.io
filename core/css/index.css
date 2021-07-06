@@ -4,7 +4,7 @@ a {
 }
 
 a:hover {
-  color: #4075e7;
+  color: #fb5607;
 }
 
 #app {
@@ -88,7 +88,9 @@ a:hover {
 #footer [xtext]:first-child {
   font-weight: 700;
 }
-
+#footer [xtext]:first-child::first-letter{
+  font-size: 1.4em;
+}
 #footer [xlist] a {
   margin-top: var(--size1, 18px);
 }
@@ -96,6 +98,9 @@ a:hover {
 #footer .footer_email {
   grid-area: Email;
   font-size: 3.45vw;
+}
+#footer .footer_email::first-letter{
+  font-size: inherit!important;
 }
 
 #footer .footer_social {
