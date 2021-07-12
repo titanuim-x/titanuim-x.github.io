@@ -8,7 +8,7 @@ xstudio.init()
       XSection({ id: "main" },
         XBlank(
           XList({ listType: "row" },
-            XText({ tagName: "a", href: "" }, "Index"),
+            XText({ tagName: "a", href: location.origin }, "Index"),
             XList({ listType: "row" },
               XText({ tagName: "a", href: "#about" }, "about"),
               XText({ tagName: "a", href: "#footer" }, "contact")
