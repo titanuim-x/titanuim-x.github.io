@@ -12,6 +12,16 @@ a:hover {
   color: var(--light, #000);
 }
 
+[xtext] {
+  transition: transform 0.5s ease;
+  transform: rotateX(90deg) translateY(1rem);
+  transform-origin: bottom;
+  transition-delay: 0.15s;
+}
+[xtext].active{
+  transform: rotateX(0deg) translateY(0);
+}
+
 #main h1[xtext] {
   font-family: 'Montserrat', sans-serif;
   font-size: 16vw;
@@ -88,9 +98,11 @@ a:hover {
 #footer [xtext]:first-child {
   font-weight: 700;
 }
-#footer [xtext]:first-child::first-letter{
+
+#footer [xtext]:first-child::first-letter {
   font-size: 1.4em;
 }
+
 #footer [xlist] a {
   margin-top: var(--size1, 18px);
 }
@@ -99,7 +111,8 @@ a:hover {
   grid-area: Email;
   font-size: 3.45vw;
 }
-#footer .footer_email::first-letter{
+
+#footer .footer_email::first-letter {
   font-size: inherit!important;
 }
 

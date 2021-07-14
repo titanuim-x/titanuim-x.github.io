@@ -1,4 +1,5 @@
 import { XStudio, XBlank, XSection, XContent, XList, XText, XFooter } from "https://x-titan.github.io/xstudio/index.js"
+import animation from "./animation.js"
 
 const xstudio = new XStudio("#app")
 
@@ -76,4 +77,10 @@ xstudio.init()
   })
   .then(xstudio.use)
   .then(xstudio.ready)
+  .then(() => {
+    animation({
+      sourceParent: xstudio.body,
+      targetElements: document.querySelectorAll("[xtext]")
+    })
+  })
   .catch(XStudio.ERROR)
