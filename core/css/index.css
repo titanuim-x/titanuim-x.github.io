@@ -14,9 +14,9 @@ a:hover {
 
 [xtext] {
   transition: transform 0.5s ease;
-  transform: rotateX(90deg) translateY(1rem);
+  transform: rotateX(90deg) translateY(var(--size2));
   transform-origin: bottom;
-  transition-delay: 0.15s;
+  transition-delay: 0.2s;
 }
 [xtext].active{
   transform: rotateX(0deg) translateY(0);

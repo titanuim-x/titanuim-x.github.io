@@ -18,7 +18,7 @@ export default function Animate({ sourceParent, targetElements, activeClassName 
   if ("string" !== typeof activeClassName) activeClassName = "active"
 
   let isScrolling = false, scroll = () => {
-    if (isScrolling) requestAnimationFrame(() => scroll(isScrolling = true));
+    if (isScrolling) requestAnimationFrame(() => scroll(isScrolling = false));
     for (const x of targetElements)
       if (isPartiallyVisible(x)) x.classList.add(activeClassName)
       else x.classList.remove(activeClassName);
