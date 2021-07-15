@@ -18,7 +18,8 @@ a:hover {
   transform-origin: bottom;
   transition-delay: 0.2s;
 }
-[xtext].active{
+
+[xtext].active {
   transform: rotateX(0deg) translateY(0);
 }
 
@@ -56,12 +57,8 @@ a:hover {
   margin-top: calc(var(--size6, 128px) * 1.5);
 }
 
-#about .description {
-  font-size: 1.6em;
-}
-
-#about .leftSide {
-  font-size: 1.4em;
+#about .description,#about .leftSide {
+  font-size: 1.7em;
 }
 
 #about .rightSide {
@@ -105,27 +102,35 @@ a:hover {
 
 #footer [xlist] a {
   margin-top: var(--size1, 18px);
+  position: relative;
 }
 
-#footer .footer_email {
+#footer a:hover::after {
+  content: "↗";
+  position: absolute;
+  right: -1em;
+  width: fit-content;
+}
+
+.footer_email {
   grid-area: Email;
   font-size: 3.45vw;
 }
 
-#footer .footer_email::first-letter {
+.footer_email::first-letter {
   font-size: inherit!important;
 }
 
-#footer .footer_social {
+.footer_social {
   grid-area: Socials;
   padding-left: var(--size2, 24px);
 }
 
-#footer .footer_github {
+.footer_github {
   grid-area: Githubs;
 }
 
-#footer .footer_site {
+.footer_site {
   grid-area: Sites;
 }
 
@@ -145,15 +150,19 @@ a:hover {
     font-size: 20vh;
     white-space: nowrap;
   }
-  #footer .footer_grid {
+  .footer_grid {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 'Email Email' 'Socials Githubs';
   }
-  #footer .footer_email {
+  .footer_email {
     justify-self: end;
     font-size: var(--h4, 1.8em);
   }
-  #footer .footer_site {
+  .footer_email:after{
+    right: none;
+    left:-1em;
+  }
+  .footer_github{
     display: none;
   }
   #about .empty {
@@ -165,7 +174,7 @@ a:hover {
 }
 
 @media screen and (max-width:450px) {
-  #footer .footer_email {
+  .footer_email {
     font-size: var(--h5, 1.4em);
   }
 }
