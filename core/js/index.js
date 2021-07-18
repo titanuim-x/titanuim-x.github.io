@@ -70,7 +70,7 @@ xstudio.init()
             XText({ tagName: "a", href: "https://titanium-studio.github.io" }, "titanium-studio"),
             XText({ tagName: "a", href: "https://titanium-studio.github.io/studio" }, "titanium-studio/studio"),
             XText({ tagName: "a", href: "https://titanium-studio.github.io/gallery" }, "titanium-studio/gallery"),
-            XText({ tagName: "a", href: "https://https://x-titan.herokuapp.com" }, "heroku@x-titan")
+            XText({ tagName: "a", href: "https://x-titan.herokuapp.com" }, "heroku@x-titan")
           )
         )
       )
