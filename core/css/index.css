@@ -23,6 +23,15 @@ a:hover {
   transform: rotateX(0deg) translateY(0);
 }
 
+.flex{
+  display: flex;
+}
+
+.wrapper{
+  align-items: center;
+  justify-content: center;
+}
+
 #main h1[xtext] {
   font-family: 'Montserrat', sans-serif;
   font-size: 16vw;
