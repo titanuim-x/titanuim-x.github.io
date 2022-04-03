@@ -18,18 +18,53 @@
 </head>
 
 <body>
-  <div id="body" flex center col>
-    <p>Sorry! This site doesnt work</p>
-    <a href="https://x-titan.herokuapp.com">Go to Home page</a>
+  <header>
+    <nav>
+      <ul>
+        <li><a class="clk" href="#about">About</a></li>
+        <li><a class="clk" href="#projects">Projects</a></li>
+        <li><a class="clk" href="#contacts">Contacts</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="body">
+    <section id="about">
+      <h1>About me</h1>
+    </section>
+    <section id="projects">
+      <h1>My projects</h1>
+      <table id="projectTable"></table>
+    </section>
+    <footer id="contacts">
+      <h1>Contact me</h1>
+      <ul>
+        <li><a href="https://x-titan.herokuapp.com">X-Titan@heroku</a></li>
+        <li><a href="https://titanium-studio.github.io">X-Titan@github</a></li>
+        <li><a href="https://titanium-studio.github.io">Titanium-studio@github</a></li>
+        <li><a href="https://x-titan.vercel.app">x-titan@vercel</a></li>
+      </ul>
+      <ul>
+        <li><a href="https://x-titan.herokuapp.com">X-Titan</a></li>
+        <li><a href="https://titanium-studio.github.io">Titanium-studio</a></li>
+        <li><a href="https://x-titan.vercel.app">x-titan@vercel</a></li>
+      </ul>
+    </footer>
+  </div>
+  <div msg id="msgbtns">
+    <button id="msgclose"><span></span><span></span></button>
+  </div>
+  <div msg id="msg">
+
   </div>
   <script src="./core/js/index.js" type="module" defer></script>
-  <script type="text/javascript" defer>
+  <noscript type="text/javascript" defer>
     (function (m, e, t, r, i, k, a) {
-      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
-      m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+    m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r,
+    a.parentNode.insertBefore(k, a)
     })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
     ym(81237340, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true });
-  </script>
+  </noscript>
 </body>
 
 </html>
