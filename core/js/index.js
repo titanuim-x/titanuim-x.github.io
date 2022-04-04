@@ -36,7 +36,7 @@ new Promise((res, rej) => {
     console.error(err)
     openMSG("<div fill_ flex center col>" + err.message + "</div>")
   } else
-    openMSG("<div fill_ flex center col>Error this site doesnt work</div>")
+    openMSG("<div fill_ flex center col>" + err + "</div>")
 })
 
 function closeMSG() {
