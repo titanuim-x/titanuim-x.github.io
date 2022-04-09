@@ -26,10 +26,16 @@ header nav ul {
   flex-direction: row;
 }
 
+header nav ul li {
+  margin-right: 2rem;
+}
+
 ul {
   padding: 0;
   list-style: none;
 }
+
+
 
 a {
   color: black;
@@ -51,10 +57,6 @@ a::after {
 
 a:hover::after {
   width: 100%;
-}
-
-header nav ul li {
-  margin-right: 2rem;
 }
 
 #body {
@@ -130,6 +132,10 @@ button {
   cursor: pointer;
 }
 
+section, article {
+  padding-left: 1em;
+}
+
 #msgbtns {
   position: fixed;
   bottom: 0;
@@ -174,6 +180,57 @@ footer {
   display: block;
 }
 
-footer ul li {
+li {
   margin-bottom: 1em;
+  width: fit-content;
+}
+
+
+/* collapsible */
+
+label {
+  display: block;
+  height: fit-content;
+  cursor: pointer;
+}
+
+label h1 {
+  display: inline-block;
+}
+
+label:hover {
+  color: red;
+}
+
+label::after {
+  content: ' ';
+  display: inline-block;
+
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid currentColor;
+
+  vertical-align: middle;
+  margin-left: .7rem;
+  transform: translateY(-2px);
+
+  transition: transform .2s ease-out;
+}
+
+section[collapsible] {
+  max-height: 0px;
+  overflow: hidden;
+  transition: all .5s ease-in-out;
+}
+
+input[type="checkbox"]:checked+label::after {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+input[type="checkbox"]:checked+label+section[collapsible] {
+  max-height: 100vh;
+}
+
+input[type="checkbox"] {
+  display: none;
 }

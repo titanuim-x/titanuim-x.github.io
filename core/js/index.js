@@ -9,27 +9,31 @@ each(alist, (a) => {
   if (href[0] === "#") a.onclick = function (e) {
     e.preventDefault()
     history.pushState(null, null, href)
-    scrollTo(search(href))
+    openSection(href.slice(1))
   }
 })
 
+function openSection(id) {
+  const section = search.id(id)
+  const input = search("input", section)
+  input.checked = true
+}
+
 window.onpopstate = function (e) {
-  console.log(e)
   const { hash } = location
   if (hash === "") return scrollTo(body)
-  scrollTo(search(hash))
 }
 
 search.id("msgclose").onclick = closeMSG
 
 new Promise((res, rej) => {
-  rej("<h1>This site doesnt work</h1>")
   try {
     if (location.hash) {
-      scrollTo(search(location.hash))
+      openSection(location.hash.slice(1))
     }
-  } catch (e) { rej() }
-
+  } catch (e) {
+    location.hash = ""
+  }
   res()
 }).catch(err => {
   if (is.error(err)) {
