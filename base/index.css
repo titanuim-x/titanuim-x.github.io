@@ -1,0 +1,231 @@
+:root {
+  --fill_: fill-available;
+  --fill: var(--fill_, 100%);
+  --size0: 8px;
+  --size1: 16px;
+  --size2: 24px;
+  --size3: 32px;
+  --size4: 48px;
+  --size5: 64px;
+  --size6: 128px;
+  --size7: 144px;
+  --size8: 192px;
+  --size9: 256px;
+  --scrollbar-size: 8px;
+}
+
+:root {
+  --gray: #282828;
+  --gray-100: #DEE2E6;
+  --gray-200: #CED4DA;
+  --gray-300: #ADB5BD;
+  --gray-400: #6C757D;
+  --gray-500: #495057;
+  --gray-600: #343A40;
+  --gray-700: #212529;
+  --gray-800: #1B1F22;
+  --gray-900: #121517;
+}
+
+:root {
+  --white: #fdfffc;
+  --white-1: #f7fff7;
+  --black: #08090a;
+  --red: #ef233c;
+  --red-1: #ff6b6b;
+  --green: #80ed99;
+  --sky: #00B4D8;
+  --blue: #0091ea;
+  --yellow: #f5cb5c;
+  --orange: #ff7b00;
+  --violet: #7700ff;
+  --violet-1: #9d46ff;
+  --accent: var(--blue);
+}
+
+*::selection {
+  background: var(--violet-1);
+  color: white;
+}
+
+::-webkit-scrollbar-corner {
+  visibility: hidden;
+}
+
+::-webkit-scrollbar {
+  width: var(--scrollbar-size, 10px);
+  height: var(--scrollbar-size, 10px);
+  background: var(--gray-800);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-800);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-500);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-300);
+}
+
+[white] {
+  background-color: var(--white);
+}
+
+[black] {
+  background-color: var(--black);
+}
+
+[light], [_fff] {
+  background-color: #fff;
+}
+
+[dark], [_000] {
+  background-color: #000;
+}
+
+[red] {
+  background-color: var(--red);
+}
+
+[green] {
+  background-color: var(--green);
+}
+
+[blue] {
+  background-color: var(--blue);
+}
+
+[yellow] {
+  background-color: var(--yellow);
+}
+
+[sky] {
+  background-color: var(--sky);
+}
+
+[orange] {
+  background-color: var(--orange);
+}
+
+[violet] {
+  background-color: var(--violet);
+}
+
+[accent] {
+  background-color: var(--accent);
+}
+
+
+[flex] {
+  display: flex;
+}
+
+[flex="col"] {
+  flex-direction: column;
+}
+
+[flex="row"] {
+  flex-direction: row;
+}
+
+[grid] {
+  display: grid;
+}
+
+[center] {
+  align-items: center;
+  justify-self: center;
+}
+
+[fill] {
+  width: var(--fill);
+  height: var(--fill);
+}
+
+[fill_] {
+  width: 100%;
+  height: 100%;
+}
+
+[text-center] {
+  text-align: center;
+}
+
+[hide], .hide {
+  display: none;
+  pointer-events: none;
+}
+
+[box] {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+[item] {
+  --over: hidden;
+  --endy: auto;
+  --endx: auto;
+  --posx: auto;
+  --posy: auto;
+  grid-column-start: var(--posx, auto);
+  grid-row-start: var(--posy, auto);
+  grid-row-end: var(--endY, auto);
+  grid-column-end: var(--endx, auto);
+  overflow: var(--over, hidden);
+}
+
+style, noscript, script {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+img {
+  object-fit: contain;
+  border: 1px solid var(--white);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a[href]:hover {
+  cursor: pointer;
+  color: var(--accent);
+  position: relative;
+}
+
+a[href]::after {
+  content: "";
+  display: block;
+  background-color: var(--white);
+  position: absolute;
+  bottom: -0.2em;
+  left: 0;
+  width: 0.6em;
+  height: 0.1em;
+  transition: 0.2s cubic-bezier(0.85, 0.09, 0.21, 0.97);
+}
+
+[hidelinkafter] a::after, a[nolinkafter]::after {
+  background-color: var(--accent);
+  width: 0;
+}
+
+[nolinkafter] a::after, a[nolinkafter]::after {
+  content: none;
+  display: none;
+}
+
+a[href]:hover::after {
+  background-color: var(--accent);
+  width: 100%;
+}
