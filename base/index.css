@@ -215,9 +215,12 @@ a[href] {
   position: relative;
 }
 
+nav a[href]::after {
+  width: 0%;
+}
+
 a[href]:hover {
   cursor: pointer;
-  color: var(--accent);
 }
 
 a[href]::after {
@@ -227,7 +230,7 @@ a[href]::after {
   position: absolute;
   bottom: -0.2em;
   left: 0;
-  width: 100%;
+  width: 0.6em;
   height: 0.1em;
   transition: 0.2s cubic-bezier(0.85, 0.09, 0.21, 0.97);
 }
