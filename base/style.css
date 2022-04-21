@@ -1,0 +1,137 @@
+:root {
+  --content: 760px;
+  --container: 1440px;
+  --gutter: 1rem;
+  --radius: 0.4rem
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 1rem;
+}
+
+header {
+  height: 64px;
+  overflow: hidden;
+  justify-content: space-between;
+  margin: 0 auto;
+  background-color: var(--white);
+  color: var(--black);
+}
+
+header ul {
+  grid-gap: 1.6rem;
+  gap: 1.6rem;
+}
+
+header .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+header img {
+  height: 42px;
+  transition: transform 0.1s ease;
+}
+
+header img:hover {
+  transform: scale(1.1);
+}
+
+#root {
+  background-color: var(--gray-900);
+  color: var(--white);
+  height: calc(100vh - 64px);
+  overflow: auto;
+}
+
+#body {
+  margin-bottom: 96px;
+  min-height: 50vh;
+}
+
+#body p {
+  margin: 1rem 0;
+}
+
+#body a:link, #body a:visited {
+  color: var(--blue);
+}
+
+main, article, section, footer {
+  position: relative;
+  margin-top: 4rem;
+}
+
+.container {
+  max-width: var(--container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  width: 100%;
+}
+
+.gutter {
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.content {
+  max-width: var(--content);
+  width: 100%;
+}
+
+footer {
+  margin-top: 24px;
+  padding: 140px 80px 120px;
+  background-color: var(--white);
+  color: var(--black);
+}
+
+pre {
+  background-color: var(--gray-600);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin: 1rem 0 2rem;
+  height: fit-content;
+  display: flex;
+  overflow: auto;
+  position: relative;
+}
+
+code {
+  width: fit-content;
+}
+
+footer h2, footer p {
+  margin: 0;
+}
+
+footer .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+footer .footer-hero {
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--gray-400);
+  grid-column-start: 1;
+  grid-column-end: -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 64px;
+}
+
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6 {
+  padding: 0.5rem 0;
+}

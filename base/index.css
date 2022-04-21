@@ -16,6 +16,7 @@
 
 :root {
   --gray: #282828;
+  --gray-000: #fdfeff;
   --gray-100: #DEE2E6;
   --gray-200: #CED4DA;
   --gray-300: #ADB5BD;
@@ -25,12 +26,14 @@
   --gray-700: #212529;
   --gray-800: #1B1F22;
   --gray-900: #121517;
+  --gray-999: #03070a;
 }
 
 :root {
   --white: #fdfffc;
   --white-1: #f7fff7;
   --black: #08090a;
+  --black-1: #020209;
   --red: #ef233c;
   --red-1: #ff6b6b;
   --green: #80ed99;
@@ -50,6 +53,11 @@ html, body {
   width: 100vw;
   overflow: hidden;
   font-size: 18px;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 *::selection {
@@ -195,13 +203,24 @@ style, noscript, script {
   pointer-events: none !important;
 }
 
+blockquote, body, dd, dl, dt, figcaption, figure, h1,
+h2, h3, h4, h5, h6, hr, html, li, ol, p, pre, table, ul {
+  margin: 0;
+  padding: 0;
+}
+
 img {
   object-fit: contain;
   border: 1px solid var(--white);
 }
 
-ul {
+ol, ul {
   list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 0.5rem;
+  gap: 0.5rem;
 }
 
 a {
@@ -210,28 +229,28 @@ a {
   display: inline-block;
 }
 
-a[href] {
-  color: var(--accent);
+a:link, a:visited {
+  color: inherit;
   position: relative;
 }
 
-nav a[href]::after {
+a:link::after {
   width: 0%;
 }
 
-a[href]:hover {
+a:link:hover {
   cursor: pointer;
 }
 
-a[href]::after {
+a:link::after {
   content: "";
   display: block;
-  background-color: var(--accent);
+  background-color: var(--blue);
   position: absolute;
-  bottom: -0.2em;
+  bottom: 2px;
   left: 0;
-  width: 0.6em;
-  height: 0.1em;
+  width: 0;
+  height: 2px;
   transition: 0.2s cubic-bezier(0.85, 0.09, 0.21, 0.97);
 }
 
@@ -245,6 +264,6 @@ a[href]::after {
   display: none;
 }
 
-a[href]:hover::after {
+a:link:hover::after {
   width: 100%;
 }
