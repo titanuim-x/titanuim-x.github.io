@@ -256,8 +256,10 @@ footer [footer-hero] {
   border: 1px solid var(--black);
   background-color: transparent;
 }
-#body button:hover{
-  border: 1px solid var(--accent);
+
+#body button:hover {
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .container {
