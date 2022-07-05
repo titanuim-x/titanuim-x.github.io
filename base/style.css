@@ -251,6 +251,14 @@ footer [footer-hero] {
   font-size: 8em;
 }
 
+#body button {
+  padding: var(--size0) var(--size1);
+  border: 1px solid var(--black);
+}
+#body button:hover{
+  border: 1px solid var(--accent);
+}
+
 .container {
   max-width: var(--container);
   margin-left: auto;
