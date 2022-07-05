@@ -1,6 +1,13 @@
 import { is } from "https://x-titan.github.io/utils/index.js"
-import { search } from "https://x-titan.github.io/web-utils/index.js"
+import { search, css } from "https://x-titan.github.io/web-utils/index.js"
 
+
+
+
+
+/** HTML tag
+<></>
+*/
 
 /**
  * @param {globalThis} g
@@ -9,33 +16,40 @@ import { search } from "https://x-titan.github.io/web-utils/index.js"
  */
 function main(g, d, body) {
   const content = search.id("body")
-  const root = search.newElement("div")
   const header = search.newElement("header")
   const footer = search.newElement("footer")
+  const nav_box = search.newElement("div")
 
-  if (is.empty(content))
-    return console.warn("Content is not defined. please create element in root html with id `body`")
+  if (is.empty(content)) {
+    return console.warn("Content is not defined. please create element in root html with tag `body`")
+  }
 
-  root.id = "root"
   header.id = "header"
   footer.id = "footer"
+  nav_box.id = "nav_box"
 
   header.innerHTML = `
-<div class="container">
-  <a href="/" class="logo notranslate" nolinkafter translate="no">
-    <img src="https://titanium-studio.github.io/src/svg/hero1.svg" alt="hero">
-  </a>
-  <nav id="nav">
-    <ul flex="row" id="nav_list">
-      <li><a href="https://x-titan.herokuapp.com/archive">Archive</a></li>
-      <li><a href="https://titanium-studio.github.io/gallery">Gallery</a></li>
-      <li><a href="https://github.com/x-titan">Github</a></li>
-    </ul>
-  </nav>
-</div>`
+  <div nolinkbefore header-container>
+    <button header-button header-search>
+      <div header-icon>
+        <span header-search-circle></span>
+        <span stick header-search-stick></span>
+      </div>
+    </button>
+    <a href="/" header-button header-hero>
+      <div header-icon>
+        <img src="https://titanium-studio.github.io/src/svg/hero1.svg" alt="hero">
+      </div>
+    </a>
+    <button onclick="headerOnClick()" header-button header-burger>
+      <div header-icon>
+        <span stick header-burger-stick></span>
+        <span stick header-burger-stick></span>
+      </div>
+    </button>
+  </div>`
 
-  footer.innerHTML = `
-  <div class="container">
+  footer.innerHTML = `<div nolinkbefore class="container">
   <div>
     <h2>Site map</h2>
     <ul>
@@ -70,19 +84,45 @@ function main(g, d, body) {
       <li><a href="https://github.com/titanium-studio">Titanium-Studio</a></li>
     </ul>
   </div>
-  <div class="footer-hero">
+  <div footer-hero class="footer-hero">
     <a href="/">
       <h2>X-Titan</h2>
     </a>
     <p>powered by <a href="https://titanium-studio.github.io">Titanium-Studio</a></p>
   </div>
+</div>`; `
+<div class="container">
+  <a href="/" class="logo notranslate" nolinkbefore translate="no">
+    <img src="https://titanium-studio.github.io/src/svg/hero1.svg" alt="hero">
+  </a>
+  <nav id="nav">
+    <ul flex="row" id="nav_list">
+      <li><a href="https://x-titan.herokuapp.com/archive">Archive</a></li>
+      <li><a href="https://titanium-studio.github.io/gallery">Gallery</a></li>
+      <li><a href="https://github.com/x-titan">Github</a></li>
+    </ul>
+  </nav>
 </div>`
 
-  body.innerHTML = ""
-  root.appendChild(content)
-  root.appendChild(footer)
-  body.appendChild(header)
-  body.appendChild(root)
+  nav_box.innerHTML = `
+<div fill_ flex="row" center>
+  <div></div>
+  <div text-center>
+    <ul>
+      <li><a href="/works">Works</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div>
+</div>`
+
+  globalThis.headerOnClick = function () {
+    css.toggle(body, "header_nav_active")
+  }
+
+  body.prepend(header)
+  content.append(footer)
+  body.append(nav_box)
 }
 
 if (!search.id("root")) main(globalThis, document, document.body)
