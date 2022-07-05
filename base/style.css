@@ -254,6 +254,7 @@ footer [footer-hero] {
 #body button {
   padding: var(--size0) var(--size1);
   border: 1px solid var(--black);
+  background-color: transparent;
 }
 #body button:hover{
   border: 1px solid var(--accent);
