@@ -98,11 +98,16 @@ header [header-burger] span:last-child {
   position: fixed;
   top: 0;
   left: 0;
+  overflow: hidden;
+  font-size: 2em;
   background-color: var(--black);
   color: var(--white);
-  overflow: hidden;
   transition: all 0.2s ease-in-out;
   z-index: 1;
+}
+
+#navbox a {
+  text-decoration: none;
 }
 
 .header_nav_active header [header-button] {
@@ -134,10 +139,19 @@ footer {
   color: var(--white);
 }
 
+footer a[href] {
+  text-decoration: none;
+  color: var(--gray-300);
+}
+
 footer [card] {
   padding: var(--size0);
   display: flex;
+}
+
+footer [card]:last-child {
   align-items: flex-end;
+  justify-content: flex-end;
 }
 
 /********************/
@@ -159,4 +173,20 @@ footer [card] {
   text-transform: uppercase;
   text-align: left;
   text-align-last: right;
+}
+
+@media screen and (max-width:800px) {
+  [main] {
+    font-size: 0.6em;
+  }
+
+  [main] p, [main] a {
+    font-size: 18px;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  #navbox>div>div:first-child {
+    display: none;
+  }
 }

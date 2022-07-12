@@ -48,9 +48,18 @@ const footerHTML = `
       <li><a href="https://www.facebook.com/ace.titan.404">Facebook</a></li>
       <li><a href="https://t.me/titanov">Telegram</a></li>
       <li><a href="https://vk.com/aset_telmanov">VKontakte</a></li>
+      <li><a href="https://github.com/x-titan">Github</a></li>
     </ul>
   </div>
-  <div card></div>
+  <div card>
+    <ul>
+      <li><h6>Sites</h6></li>
+      <li><a href="https://x-titan.herokuapp.com">Heroku/X-Titan</a></li>
+      <li><a href="https://wa.me/+77788405404">Firebase/X-Titan</a></li>
+      <li><a href="https://titanium-studio.github.io/">Github/Titanium-studio</a></li>
+      <li><a href="https://x-titan.github.io/">Github/X-Titan</a></li>
+    </ul>
+  </div>
   <div card>
     <p>Powered by <a href="https://x-titan.github.io">X-Titan</a></p>
   </div>
