@@ -7,11 +7,11 @@ const body = d.body
 let once = 0
 
 const headerHTML = `
-<div flex="row" header-container>
+<div header-container>
   <button header-button>
     <div header-icon></div>
   </button>
-  <a href="/" button header-button header-hero>
+  <a href="/" header-button header-hero>
     <div header-icon>
       <img src="https://titanium-studio.github.io/src/svg/hero1.svg" alt="hero">
     </div>
@@ -25,39 +25,19 @@ const headerHTML = `
 </div>`
 
 const footerHTML = `
-<div fill grid class="notranslate" translate="no">
+<div fill grid>
   <div card></div>
   <div card></div>
   <div card></div>
   <div card></div>
-  <div card>
-    <ul>
-      <li><h6>Site map</h6></li>
-      <li><a href="/">Index</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/work">Works</a></li>
-      <li><a href="/help">Help</a></li>
-      <li><a href="/contact">Contact</a></li>
-    </ul>
-  </div>
-  <div card>
-    <ul>
-      <li><h6>Socials</h6></li>
-      <li><a href="https://www.behance.net/asettelmanov">Behance</a></li>
-      <li><a href="https://wa.me/+77788405404">Whatsapp</a></li>
-      <li><a href="https://www.facebook.com/ace.titan.404">Facebook</a></li>
-      <li><a href="https://t.me/titanov">Telegram</a></li>
-      <li><a href="https://vk.com/aset_telmanov">VKontakte</a></li>
-    </ul>
-  </div>
   <div card></div>
-  <div card>
-    <p>Powered by <a href="https://x-titan.github.io">X-Titan</a></p>
-  </div>
+  <div card></div>
+  <div card></div>
+  <div card></div>
 </div>`
 
 const navHTML = `
-<div fill preset="1">
+<div fill_ flex="row" center>
   <div></div>
   <div text-center>
     <ul>
@@ -78,10 +58,6 @@ function onload() {
   const header = search.new("header")
   const footer = search.new("footer")
   const nav = search.new("div")
-
-  header.id = "header"
-  footer.id = "footer"
-  nav.id = "navbox"
 
   header.innerHTML = headerHTML
   footer.innerHTML = footerHTML

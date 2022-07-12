@@ -130,10 +130,11 @@ html, body {
   overflow: hidden;
 }
 
-#body {
-  overflow-y: auto;
-  height: var(--height);
-  width: 100%;
+style, noscript, script {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 section, article, main {
@@ -157,6 +158,12 @@ button {
   margin: 0;
   position: relative;
   background-color: red;
+}
+
+#body {
+  overflow-y: auto;
+  height: var(--height);
+  width: 100%;
 }
 
 [h100] {
