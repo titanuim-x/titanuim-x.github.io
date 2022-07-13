@@ -153,7 +153,28 @@
   width: 50%;
 }
 
-[pos] {
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-size: 18px;
+}
+
+[pos],
+[pos="rel"],
+[relative],
+[container],
+[content],
+[button],
+html,
+body,
+main,
+article,
+header,
+footer,
+section,
+button, 
+#body {
   position: relative;
 }
 
@@ -165,30 +186,9 @@
   position: fixed;
 }
 
-[pos="rel"],
-[relative],
-[container],
-[content],
-main,
-section,
-article,
-header,
-footer,
-section {
-  position: relative;
-}
-
 [hide], [none], .hide {
   display: none;
   pointer-events: none;
-}
-
-html, body {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  font-size: 18px;
 }
 
 style, noscript, script {
@@ -225,7 +225,6 @@ button, [button] {
   cursor: pointer;
   padding: 0;
   margin: 0;
-  position: relative;
   background-color: transparent;
 }
 
@@ -293,11 +292,7 @@ h6 {
   align-content: flex-start;
 }
 
-[flex][align] {
-  align-content: flex-start;
-}
-
-[flex][align="start"] {
+[flex][align], [flex][align="start"] {
   align-content: flex-start;
 }
 
