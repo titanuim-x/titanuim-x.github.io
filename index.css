@@ -173,6 +173,10 @@ footer [card]:last-child {
   text-align-last: right;
 }
 
+[preset] {
+  /* pass */
+}
+
 [preset="1"] {
   display: flex;
   flex-direction: row;
@@ -200,6 +204,20 @@ footer [card]:last-child {
 }
 
 @media screen and (orientation: portrait) {
+  [grid] {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  [flex] [card], [flex] [box] {
+    width: 50%;
+    height: 25%;
+  }
+
+  [preset="1"] {
+    flex-direction: column;
+  }
+
   #navbox>div>div:first-child {
     display: none;
   }
