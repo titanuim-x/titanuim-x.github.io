@@ -1,5 +1,4 @@
 :root {
-  /* Size */
   --fill_: fill-available;
   --fill: var(--fill_, 100%);
   --size0: 8px;
@@ -13,7 +12,6 @@
   --size8: 192px;
   --size9: 256px;
   --scrollbar-size: 8px;
-  /* Page heihgt */
   --height: 100%;
   --h100: var(--height);
   --h75: calc(var(--height) / 4 * 3);
@@ -24,7 +22,6 @@
 }
 
 :root {
-  /* Gray scale */
   --gray: #282828;
   --gray-000: #fdfeff;
   --gray-100: #DEE2E6;
@@ -40,7 +37,6 @@
 }
 
 :root {
-  /* Colors */
   --white: #fdfffc;
   --white-1: #f7fff7;
   --black: #08090a;
@@ -55,9 +51,6 @@
   --violet: #7700ff;
   --violet-1: #9d46ff;
   --accent: var(--blue);
-  --link-hover-color: var(--accent);
-  --button-border-hover-color: var(--black);
-  --button-border-focus-color: var(--button-border-hover-color);
 }
 
 * {
@@ -167,8 +160,38 @@ html, body {
   font-size: 18px;
 }
 
-style, noscript, script,
+[pos],
+[pos="rel"],
+[relative],
+[container],
+[content],
+[button],
+html,
+body,
+main,
+article,
+header,
+footer,
+section,
+button,
+#body {
+  position: relative;
+}
+
+[pos="abs"] {
+  position: absolute;
+}
+
+[pos="fix"] {
+  position: fixed;
+}
+
 [hide], [none], .hide {
+  display: none;
+  pointer-events: none;
+}
+
+style, noscript, script {
   display: none !important;
   opacity: 0 !important;
   visibility: hidden !important;
@@ -181,15 +204,11 @@ section, article, main {
 
 ol, ul {
   list-style: none;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  --gap: 0.5em;
-  grid-gap: var(--gap);
-  gap: var(--gap);
-}
-
-a {
-  text-decoration: none;
+  grid-gap: 0.5em;
+  gap: 0.5em;
 }
 
 a:link, a[href], a:visited {
@@ -197,7 +216,7 @@ a:link, a[href], a:visited {
 }
 
 a:link:hover, a[href]:hover, a:visited:hover {
-  color: var(--link-hover-color);
+  color: var(--accent);
 }
 
 button, [button] {
@@ -210,11 +229,12 @@ button, [button] {
 }
 
 button:focus, a:focus, [button]:focus, [focus] {
-  border: 1px solid var(--button-border-focus-color);
+  border: 1px solid var(--accent);
+  border-radius: 0.3em;
 }
 
 button:hover, [button]:hover {
-  border: 1px solid var(--button-border-hover-color);
+  border: 1px solid black;
 }
 
 img {
@@ -226,8 +246,7 @@ img {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  --text-margin: 0.4em;
-  margin: var(--h-margin) 0;
+  margin: 0.4em 0;
 }
 
 h1 {
@@ -255,8 +274,7 @@ h6 {
 }
 
 p {
-  --text-margin: 0.6em;
-  margin: var(--text-margin) 0;
+  margin: 0.6em 0;
 }
 
 #body {
@@ -266,37 +284,24 @@ p {
   width: 100%;
 }
 
-[pos],
-[pos="rel"],
-[relative],
-[container],
-[content],
-[button],
-html,
-body,
-main,
-article,
-header,
-footer,
-section,
-button,
-#body {
-  position: relative;
-}
-
-[pos="abs"] {
-  position: absolute;
-}
-
-[pos="fix"] {
-  position: fixed;
-}
-
 [container] {
   max-width: 1080px;
   padding: 0 8px;
   margin: 0 auto;
 }
+
+[space] {
+  margin: 12rem 0;
+}
+
+[space="top"] {
+  margin-bottom: 0;
+}
+
+[space="bottom"] {
+  margin-top: 0;
+}
+
 
 [fill] {
   height: 100%;
@@ -304,13 +309,9 @@ button,
 }
 
 [grid] {
-  --cols: repeat(auto, 1fr);
-  --rows: repeat(auto, 1fr);
-  --gap: 0;
   display: grid;
-  grid-template-columns: var(--cols);
-  grid-template-rows: var(--rows);
-  gap: var(--gap);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
 [flex] {
@@ -375,7 +376,7 @@ button,
   overflow: hidden;
 }
 
-.dev[inspect], .dev [card], .dev [box], .dev [inspect] {
+.dev [card], .dev [box] {
   background: linear-gradient(45deg, black, white);
 }
 
@@ -389,4 +390,24 @@ button,
 
 [contain] {
   object-fit: contain;
+}
+
+[preset] {
+  /* pass */
+}
+
+@media screen and (orientation: portrait) {
+  [grid] {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  [flex] [card], [flex] [box] {
+    width: 50%;
+    height: 25%;
+  }
+
+  [preset="1"] {
+    flex-direction: column;
+  }
 }
