@@ -12,7 +12,6 @@
   --size7: 144px;
   --size8: 192px;
   --size9: 256px;
-  --scrollbar-size: 8px;
   --header-font-size: 1rem;
   --text-margin: 0.4em;
   /* Page heihgt */
@@ -56,6 +55,12 @@
   --orange: #ff7b00;
   --violet: #7700ff;
   --violet-1: #9d46ff;
+  /* Scroll bar */
+  --scrollbar-size: var(--size0);
+  --scrollbar-color: var(--gray-800);
+  --scrollbar-thumb-color: var(--gray-400);
+  --scrollbar-thumb-hover-color: var(--gray-200);
+  /* Optional */
   --accent: var(--blue);
   --link-hover-color: var(--accent);
   --button-border-hover-color: var(--black);
@@ -73,21 +78,21 @@
 }
 
 ::-webkit-scrollbar {
-  width: var(--scrollbar-size, 10px);
-  height: var(--scrollbar-size, 10px);
-  background: var(--gray-800);
+  width: var(--scrollbar-size, var(--size0));
+  height: var(--scrollbar-size, var(--size0));
+  background: var(--scrollbar-color, var(--gray-800));
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--gray-800);
+  background: var(--scrollbar-color, var(--gray-800));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--gray-400);
+  background: var(--scrollbar-thumb-color, var(--gray-400));
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--gray-200);
+  background: var(--scrollbar-thumb-hover-color, var(--gray-200));
 }
 
 [white] {
