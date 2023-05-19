@@ -1,0 +1,58 @@
+html, body {
+  font-size: 1.1em;
+  font-family: sans-serif;
+}
+
+body {
+  overflow-y: auto;
+  padding: 0 2em 2em;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+@media screen and (max-width:800px) {
+  html, body {
+    font-size: 1em;
+  }
+}
+
+main {
+  align-items: center;
+  justify-content: space-between;
+}
+
+main h1 {
+  font-size: 3em; 
+}
+
+section {
+  min-height: 50vh;
+}
+
+footer {
+  justify-content: space-between;
+  gap: 3em;
+}
+
+footer ul {
+  flex: 1 300px;
+}
+
+footer ul li:nth-child(1) {
+  font-weight: 600;
+}
+
+footer ul li a {
+  transition: all 0.5s ease;
+}
+
+footer ul li a::before {
+  content: "—";
+  margin-right: 0.2em;
+}
+
+footer ul li a:hover {
+  padding-left: 0.2em;
+}
