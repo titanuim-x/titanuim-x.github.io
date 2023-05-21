@@ -58,9 +58,9 @@
   /* Scroll bar */
   --scrollbar-display: block;
   --scrollbar-size: var(--size0);
-  --scrollbar-color: var(--gray-800);
-  --scrollbar-thumb-color: var(--gray-400);
-  --scrollbar-thumb-hover-color: var(--gray-200);
+  --scrollbar-color: var(--gray-100);
+  --scrollbar-thumb-color: var(--gray-300);
+  --scrollbar-thumb-hover-color: var(--gray-500);
   /* Optional */
   --accent: var(--blue);
   --link-hover-color: var(--accent);
@@ -82,19 +82,19 @@
   display: var(--scrollbar-display);
   width: var(--scrollbar-size, var(--size0));
   height: var(--scrollbar-size, var(--size0));
-  background: var(--scrollbar-color, var(--gray-800));
+  background: var(--scrollbar-color, var(--gray-100));
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--scrollbar-color, var(--gray-800));
+  background: var(--scrollbar-color, var(--gray-100));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb-color, var(--gray-400));
+  background: var(--scrollbar-thumb-color, var(--gray-300));
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--scrollbar-thumb-hover-color, var(--gray-200));
+  background: var(--scrollbar-thumb-hover-color, var(--gray-500));
 }
 
 [white] {
