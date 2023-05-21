@@ -56,6 +56,7 @@
   --violet: #7700ff;
   --violet-1: #9d46ff;
   /* Scroll bar */
+  --scrollbar-display: block;
   --scrollbar-size: var(--size0);
   --scrollbar-color: var(--gray-800);
   --scrollbar-thumb-color: var(--gray-400);
@@ -78,6 +79,7 @@
 }
 
 ::-webkit-scrollbar {
+  display: var(--scrollbar-display);
   width: var(--scrollbar-size, var(--size0));
   height: var(--scrollbar-size, var(--size0));
   background: var(--scrollbar-color, var(--gray-800));
@@ -172,6 +174,7 @@ html, body {
   height: 100%;
   overflow: hidden;
   font-size: 18px;
+  font-family: sans-serif;
 }
 
 style, noscript, script,
@@ -233,6 +236,7 @@ img {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  --header-scale-factory: 1.2
   margin: var(--text-margin) 0;
 }
 
