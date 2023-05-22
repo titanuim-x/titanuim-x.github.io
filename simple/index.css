@@ -113,6 +113,10 @@
   background-color: #000;
 }
 
+[gray] {
+  background-color: var(--gray);
+}
+
 [red] {
   background-color: var(--red);
 }
@@ -169,6 +173,38 @@
   width: 50%;
 }
 
+[p1] {
+  padding: 1em;
+}
+
+[p2] {
+  padding: 2em;
+}
+
+[p3] {
+  padding: 3em;
+}
+
+[p4] {
+  padding: 4em;
+}
+
+[m1] {
+  margin: 1em;
+}
+
+[m2] {
+  margin: 2em;
+}
+
+[m3] {
+  margin: 3em;
+}
+
+[m4] {
+  margin: 4em;
+}
+
 html, body {
   width: 100%;
   height: 100%;
@@ -220,11 +256,11 @@ button, [button] {
 }
 
 button:focus, a:focus, [button]:focus, [focus] {
-  border: 1px solid var(--button-border-focus-color);
+  outline: 1px solid var(--button-border-focus-color);
 }
 
 button:hover, [button]:hover {
-  border: 1px solid var(--button-border-hover-color);
+  outline: 1px solid var(--button-border-hover-color);
 }
 
 img {
