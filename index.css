@@ -50,6 +50,8 @@ header [header-button] {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
+  border: 0;
 }
 
 header [header-button]:hover {

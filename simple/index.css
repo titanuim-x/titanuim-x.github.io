@@ -248,11 +248,12 @@ a:link:hover, a[href]:hover, a:visited:hover {
 
 button, [button] {
   outline: none;
-  border: none;
+  border: 1px solid var(--black);
+  padding: 0.5em 1em;
   cursor: pointer;
-  padding: 0;
   margin: 0;
   background-color: transparent;
+  font-size: 1em;
 }
 
 button:focus, a:focus, [button]:focus, [focus] {
@@ -265,6 +266,7 @@ button:hover, [button]:hover {
 
 input {
   outline: none;
+  font-size: 1em;
 }
 
 input::-webkit-calendar-picker-indicator,
@@ -275,6 +277,10 @@ input::-webkit-search-results-decoration {
   display: none;
   opacity: 0;
   pointer-events: none;
+}
+
+textarea {
+  font-size: 1em;
 }
 
 img {
@@ -377,7 +383,7 @@ button,
 
 [container] {
   max-width: 1080px;
-  padding: 0 8px;
+  padding: 0 1em;
   margin: 0 auto;
 }
 
@@ -398,8 +404,14 @@ button,
 
 [flex] {
   display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
+}
+
+[flex="row"] {
+  flex-direction: row;
+}
+
+[flex="col"] {
+  flex-direction: column;
 }
 
 [flex][align], [flex][align="start"] {
@@ -419,16 +431,20 @@ button,
   height: 50%;
 }
 
-[flex-nowrap] {
+[flex][wrap] {
+  flex-wrap: wrap;
+}
+
+[flex][wrap="wrap"] {
+  flex-wrap: wrap;
+}
+
+[flex][wrap="nowrap"] {
   flex-wrap: nowrap;
 }
 
-[flex="row"] {
-  flex-direction: row;
-}
-
-[flex="col"] {
-  flex-direction: column;
+[flex-nowrap] {
+  flex-wrap: nowrap;
 }
 
 [center] {
