@@ -1,76 +1,34 @@
-import { is, each, range } from "https://x-titan.github.io/utils/index.js"
+import { is, each, range, validate } from "https://x-titan.github.io/utils/index.js"
 import { List } from "https://x-titan.github.io/list/index.js"
-import { search, css, validHTML, isHTML } from "https://x-titan.github.io/web-utils/index.js"
+import { search, css, validHTML, isHTML, attr } from "https://x-titan.github.io/web-utils/index.js"
 
 const g = globalThis
 const d = document
-const body = d.body
+const { body } = d
+const { log } = console
 
-const loadT = 750
-const longUpdT = 7000
-const loadAnimT = 500
-const updT = 50
+function repoCard(repoData) {
+  const rdiv = search.new("div")
+  const rname = search.new("div")
+  const rowner = search.new("div")
+  const rid = search.new("div")
+  const rlink = search.new("a")
 
-const noneVisibleQuery = "noneVisible"
-const textQuery = "h1,h2,h3,h4,h5,h6,p,a,li,em,i,strong,img,[noneVisible]"
-const textAnimationBlocks = search.all("[text-animation]")
 
-const textArray = []
-const textList = new List()
+  attr.add(rdiv, "card")
+  attr.add(rdiv, "repository_card")
+  rlink.href = repoData.url
 
-function isVisible(target) {
-  if (!isHTML(target)) return
-  const { top, bottom, height } = target.getBoundingClientRect()
 
-  return (top + height >= 0) && (height + innerHeight >= bottom)
 }
 
-function hideAll() {
-  each(textArray, (text) => {
-    css.add(text, noneVisibleQuery)
+
+// fetch("https://api.github.com/users/x-titan/repos")
+fetch("/repositories.json")
+  .then((response) => (response.json()))
+  .then((repositories) => {
+    log(repositories)
+    validate(is.arr, repositories)
+
+    each(repositories, repoCard)
   })
-  textList.clear()
-  textList.fromArray(textArray)
-  console.log(textList)
-}
-function onScrollAnimation() {
-  textList.filter((text) => {
-    console.log(text)
-    if (isVisible(text)) {
-      css.remove(image, noneVisibleQuery)
-      // return false
-    }
-    return true
-  })
-}
-
-// new Promise((res, rej) => {
-//   let startTime = Date.now()
-//   const update = () => {
-//     if (
-//       (d.readyState === "complete")
-//       && ((startTime + loadT) < Date.now())
-//     ) return res()
-
-//     if ((startTime + longUpdT) < Date.now()) {
-//       return rej(new Error("It took a long time to load the website"))
-//     }
-
-//     setTimeout(update, updT)
-//   }
-//   // d.addEventListener(
-//   //   "DOMContentLoaded",
-//   //   d.onreadystatechange = update
-//   // )
-//   update()
-// }).then(() => {
-//   each(textAnimationBlocks, (block) => {
-//     textArray.push(...search.all(textQuery, block))
-//   })
-//   hideAll()
-// }).then(() => {
-//   g.addEventListener("scroll", () => {
-//     onScrollAnimation()
-//   })
-//   onScrollAnimation()
-// })
