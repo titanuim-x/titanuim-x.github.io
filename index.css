@@ -9,15 +9,7 @@ body, input, textarea, select, button {
   font-family: 'Inter Tight', sans-serif;
 }
 
-[text-animation] {
-  /* PASS */
-}
-
-[text-animation] .noneVisible {
-  transform: rotateX(90deg);
-}
-
-h1, h2, h3, h4, h5, h6, p, a, li, img, [noneVisible] {
+h1, h2, h3, h4, h5, h6, p, a, li, img, [animate] {
   opacity: 1;
   transform: rotateX(0);
   transform-origin: bottom;
@@ -26,90 +18,8 @@ h1, h2, h3, h4, h5, h6, p, a, li, img, [noneVisible] {
     transform 0.5s cubic-bezier(0.85, 0.09, 0.21, 0.97) 0.3s;
 }
 
-header {
-  color: #fff;
-  height: var(--size5);
-  align-items: flex-end;
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  inset: 0 0 auto 0;
-  z-index: 1000;
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 400;
-  background-color: transparent;
-  mix-blend-mode: difference;
-  background-color: transparent;
-}
 
-header a, header [nav-menu-button] {
-  color: #fff !important;
-}
 
-[frame] {
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-header nav,
-header [nav-hero],
-header [nav-menu],
-header [nav-menu-list] {
-  display: flex;
-  flex-direction: row;
-  flex: 1 0;
-  align-items: center;
-  background-color: transparent;
-}
-
-header [nav-hero] {
-  font-size: var(--size2);
-}
-
-header [nav-menu-button] {
-  display: none;
-}
-
-header [nav-menu-list] {
-  font-size: var(--size1);
-  gap: var(--size5);
-}
-
-[frame][frame-top] {
-  border-top-left-radius: var(--size0);
-  border-top-right-radius: var(--size0);
-}
-
-[frame][frame-bottom] {
-  border-bottom-left-radius: var(--size0);
-  border-bottom-right-radius: var(--size0);
-}
-
-[frame][intro] {
-  height: 100vh;
-  height: 100lvh;
-}
-
-[card] {
-  border-radius: var(--size0);
-}
-
-@media screen and (max-width: 1200px) {
-  header [nav-menu-button] {
-    display: block;
-  }
-
-  header [nav-menu-list] {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    bottom: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    background-color: var(--black);
-  }
-}
+@media screen and (max-width: 1200px) {}
 
 @media screen and (max-width: 800px) {}
