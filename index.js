@@ -11,7 +11,9 @@ const { log } = console
 const Content = (search.id("content") || search.new("div"))
 
 const ReadmeList = [
+  "README.md",
   "readme.md",
+  "README.txt",
   "readme.txt",
   "readme",
 ]
