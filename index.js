@@ -52,7 +52,6 @@ async function GET(href) {
         reject(ev)
       }
     }
-
     xml.open("GET", href)
     xml.send()
   })
@@ -63,3 +62,12 @@ function setMarkDownContent(value) {
 }
 
 loadContent(location.href, setMarkDownContent)
+
+const header = `
+<header>
+
+</header>`
+const footer = `
+<footer>
+  
+</footer>`
