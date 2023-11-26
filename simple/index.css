@@ -240,8 +240,9 @@ a {
   text-decoration: none;
 }
 
-a:link, a[href], a:visited {
+a:link, a[href], a:link:visited, a[href]:visited {
   color: inherit;
+  position: relative;
 }
 
 a:link:hover, a[href]:hover, a:focus, a:link:focus,a[href]:focus {
@@ -369,6 +370,7 @@ header,
 footer,
 section,
 button,
+input,
 #body {
   position: relative;
 }
