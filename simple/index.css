@@ -476,8 +476,8 @@ input,
   overflow: hidden;
 }
 
-.dev[inspect], .dev [card], .dev [box], .dev [inspect], [inspect] {
-  background: linear-gradient(45deg, black, white);
+[dev][inspect], [dev] [card], [dev] [box], [dev] [inspect], [inspect] {
+  background: linear-gradient(45deg, #0003, #fff3);
 }
 
 [rect] {
