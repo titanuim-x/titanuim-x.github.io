@@ -19,6 +19,8 @@ const ReadmeList = [
 ]
 
 function errorContent(href, callback) {
+  if (location.pathname === "404.html") return
+
   GET(path.join(location.origin, "404.md"))
     .then(callback)
     .catch(() => {
@@ -39,29 +41,20 @@ function loadContent(href, callback, attemp = 0) {
     .catch(() => (loadContent(href, callback, ++attemp)))
 }
 
-async function GET(href) {
-  return new Promise((resolve, reject) => {
-    const xml = new XMLHttpRequest
-
-    xml.responseType = "text"
-    xml.onerror = reject
-    xml.onload = (ev) => {
-      if (xml.status === 200) {
-        resolve(xml.responseText)
-      } else {
-        reject(ev)
-      }
-    }
-    xml.open("GET", href)
-    xml.send()
-  })
+function GET(href) {
+  validate("string", href)
+  console.log(href)
+  return (
+    fetch(href, { method: "GET" })
+      .then((response) => (response.text()))
+  )
 }
 
 function setMarkDownContent(value) {
   Content.innerHTML = marked.parse(value)
 }
 
-loadContent(location.href, setMarkDownContent)
+loadContent(location.pathname, setMarkDownContent)
 
 const header = `
 <header>

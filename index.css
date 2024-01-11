@@ -2,6 +2,7 @@
 
 body {
   background-color: white;
+  overflow-y: auto;
 }
 
 body, input, textarea, select, button {
@@ -16,6 +17,10 @@ h1, h2, h3, h4, h5, h6, p, a, li, img, [animate] {
   transition:
     opacity 0.5s cubic-bezier(0.85, 0.09, 0.21, 0.97) 0.3s,
     transform 0.5s cubic-bezier(0.85, 0.09, 0.21, 0.97) 0.3s;
+}
+
+#content{
+  padding: var(--size8) var(--size2) var(--size2); 
 }
 
 
