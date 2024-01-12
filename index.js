@@ -8,8 +8,6 @@ const d = document
 const { body } = d
 const { log } = console
 
-const Content = (search.id("content") || search.new("div"))
-
 const ReadmeList = [
   "README.md",
   "readme.md",
@@ -17,6 +15,40 @@ const ReadmeList = [
   "readme.txt",
   "readme",
 ]
+
+function getHEADER() {
+  return `
+<header>
+  <div container flex="row">
+    <div nav>
+      <div class="menu-icon">
+        <input class="menu-icon__cheeckbox" type="checkbox" />
+        <div>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <div hero>
+      <a href="/">x titan</a>
+    </div>
+    <div search>
+      <input type="search" placeholder="Search">
+    </div>
+  </div>
+</header>
+`
+}
+
+function getFOOTER() {
+  return `
+<footer>
+  <div container grid>
+    footer grid
+  </div>
+</footer>
+`
+}
 
 function errorContent(href, callback) {
   if (location.pathname === "404.html") return
@@ -51,16 +83,14 @@ function GET(href) {
 }
 
 function setMarkDownContent(value) {
-  Content.innerHTML = marked.parse(value)
+  body.innerHTML = (
+    getHEADER() +
+    "<main><div content container>" +
+    marked.parse(value) +
+    "</div></main>" +
+    getFOOTER()
+  )
+
 }
 
 loadContent(location.pathname, setMarkDownContent)
-
-const header = `
-<header>
-
-</header>`
-const footer = `
-<footer>
-  
-</footer>`
