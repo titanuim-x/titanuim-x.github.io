@@ -90,7 +90,26 @@ function setMarkDownContent(value) {
     "</div></main>" +
     getFOOTER()
   )
+}
 
+function initHEAD() {
+  const logo = {
+    href: "/src/img/hero2.png",
+    type: "image/x-icon",
+  }
+  const css = [
+    "/simple/index.css",
+    "/index.css",
+  ]
+  const js = [
+    "https://cdn.jsdelivr.net/npm/marked/marked.min.js",
+  ]
+
+  each.obj(logo,(value,name)=>{
+    
+  })
+
+  d.head.appendChild()
 }
 
 loadContent(location.pathname, setMarkDownContent)
