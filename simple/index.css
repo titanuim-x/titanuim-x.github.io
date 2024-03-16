@@ -245,7 +245,7 @@ a:link, a[href], a:link:visited, a[href]:visited {
   position: relative;
 }
 
-a:link:hover, a[href]:hover, a:focus, a:link:focus,a[href]:focus {
+a:link:hover, a[href]:hover, a:focus, a:link:focus, a[href]:focus {
   color: var(--link-hover-color);
 }
 

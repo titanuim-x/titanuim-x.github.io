@@ -16,8 +16,8 @@ export function Header() {
                   <h2>Explore Studios</h2>
                   <ul>
                     <li><a href="https://x-titan.github.io/">X Titan</a></li>
-                    <li><a href="https://titanium-studio.github.io/">Titanium</a></li>
-                    <li><a href="https://x-titan.onrender.com/">Studio</a></li>
+                    <li><a href="https://titanium-studio.github.io/">Titanium Studio</a></li>
+                    <li><a href="https://x-titan.onrender.com/">X Titan Studio</a></li>
                   </ul>
                 </div>
               </div>
@@ -54,27 +54,12 @@ export function Header() {
             <div class="header-submenu-container">
               <div class="header-submenu-content">
                 <div class="header-group">
-                  <h2>Explore Location</h2>
+                  <h2>Explore Contents</h2>
                   <ul>
-                    <li><a href="">Aktau</a></li>
-                    <li><a href="">Almaty</a></li>
-                    <li><a href="">Uralsk</a></li>
-                  </ul>
-                </div>
-                <div class="header-group">
-                  <h2>Explore Location</h2>
-                  <ul>
-                    <li><a href="">Aktau</a></li>
-                    <li><a href="">Almaty</a></li>
-                    <li><a href="">Uralsk</a></li>
-                  </ul>
-                </div>
-                <div class="header-group">
-                  <h2>Explore Location</h2>
-                  <ul>
-                    <li><a href="">Aktau</a></li>
-                    <li><a href="">Almaty</a></li>
-                    <li><a href="">Uralsk</a></li>
+                    <li><a href="">Main</a></li>
+                    <li><a href="">Second</a></li>
+                    <li><a href="">Trihd</a></li>
+                    <li><a href="">Fourth</a></li>
                   </ul>
                 </div>
               </div>
@@ -125,7 +110,7 @@ export function Footer() {
   return `
 <footer>
   <div class="footer-container">
-    <h2>Footer</h2>
+    <p>Powered by X Titan</p>
   </div>
 </footer>
 `
