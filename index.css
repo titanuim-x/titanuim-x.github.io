@@ -1,8 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playfair:opsz,wght@5..1200,300;5..1200,400;5..1200,500;5..1200,600;5..1200,700;5..1200,800;5..1200,900&family=Nanum+Gothic:wght@400;700;800&family=Inter+Tight:wght@100;200;300;400;500;600;700;800;900&family=Comforter&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
+  --link-hover-color: #fff;
+  --header-color: #fff;
+  --header-height: var(--size4);
+  --header-background: var(--gray-900);
   --padding: 22px;
-  --height: 100vh;
+  --height: calc(100vh - var(--header-height));
 }
 
 * {
@@ -28,12 +32,6 @@ h1, h2, h3, h4, h5, h6, p, a, li, img, [animate] {
     transform 0.5s cubic-bezier(0.85, 0.09, 0.21, 0.97) 0.3s;
 }
 
-main {
-  padding: var(--size4) 0;
-  z-index: 100;
-  background-color: var(--white);
-}
-
 header, footer {
   background-color: var(--white);
 }
@@ -52,10 +50,6 @@ header,
 }
 
 header {
-  --link-hover-color: #fff;
-  --header-color: #fff;
-  --header-height: var(--size4);
-  --header-background: var(--gray-900);
   width: 100%;
   justify-content: center;
   background: var(--header-background);
